@@ -2,7 +2,6 @@ package com.rifledluffy.chairs.command;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,10 +20,9 @@ import net.md_5.bungee.api.ChatColor;
 
 public class CommandManager implements CommandExecutor {
 	
-	private ArrayList<SubCommand> commands = new ArrayList<SubCommand>();
+	private ArrayList<SubCommand> commands = new ArrayList<>();
 	private RFChairs plugin = RFChairs.getInstance();
-	
-	public CommandManager(){}
+
 	
 	//Sub Commands
 	public String main = "rfchairs";
@@ -61,7 +59,7 @@ public class CommandManager implements CommandExecutor {
                 return true;
             }
 
-            ArrayList<String> arrayList = new ArrayList<String>();
+            ArrayList<String> arrayList = new ArrayList<>();
 
             arrayList.addAll(Arrays.asList(args));
             arrayList.remove(0);
@@ -79,25 +77,26 @@ public class CommandManager implements CommandExecutor {
     }
 
     private SubCommand get(String name) {
-        Iterator<SubCommand> subcommands = this.commands.iterator();
 
-        while (subcommands.hasNext()) {
-            SubCommand sc = (SubCommand) subcommands.next();
-
+        for (final SubCommand sc : this.commands) {
             if (sc.name().equalsIgnoreCase(name)) {
                 return sc;
             }
 
-            String[] aliases;
-            int length = (aliases = sc.aliases()).length;
+            String[] aliases = sc.aliases();
+            //int length = aliases.length;
 
+            for(String alias: aliases){
+                if(name.equalsIgnoreCase(alias)) return sc;
+            }
+            /*
             for (int var5 = 0; var5 < length; ++var5) {
                 String alias = aliases[var5];
                 if (name.equalsIgnoreCase(alias)) {
                     return sc;
                 }
 
-            }
+            }*/
         }
         return null;
 }

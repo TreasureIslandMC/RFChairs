@@ -23,7 +23,7 @@ public class MuteCommand extends SubCommand {
 			onCommand((Player) sender, args);
 		} else if (sender instanceof ConsoleCommandSender) {
 			onCommand((ConsoleCommandSender) sender, args);
-		} else return;
+		}
 	}
     
     @Override
