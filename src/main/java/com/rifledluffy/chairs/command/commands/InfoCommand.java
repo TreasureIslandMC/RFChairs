@@ -21,7 +21,7 @@ public class InfoCommand extends SubCommand {
     
     @Override
 	public void onCommand(ConsoleCommandSender sender, String[] args) {
-      sender.sendMessage("§cOnly players can use commands for this plugin.");
+      sender.sendMessage("Â§cOnly players can use commands for this plugin.");
 	}
 
     @Override

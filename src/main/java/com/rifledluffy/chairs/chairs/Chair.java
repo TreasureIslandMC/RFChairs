@@ -38,7 +38,7 @@ public class Chair {
 					clear();
 					return;
 				}
-				if (fakeSeat.getPassengers().size() == 0) clear();
+				if (fakeSeat.getPassengers().isEmpty()) clear();
 			}
 			
 		};

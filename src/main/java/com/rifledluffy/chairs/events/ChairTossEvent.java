@@ -50,8 +50,8 @@ public class ChairTossEvent extends Event {
 	public HandlerList getHandlers() {
 		return handlers;
 	}
-	
-	static public HandlerList getHandlerList() {
+
+	public static HandlerList getHandlerList() {
 		return handlers;
 	}
 }

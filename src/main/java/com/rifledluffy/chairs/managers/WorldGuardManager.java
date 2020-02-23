@@ -24,11 +24,8 @@ public class WorldGuardManager {
 	public WorldGuard worldGuard;
 	public WorldGuardPlugin worldGuardPlugin;
 	public RegionContainer container;
-	@SuppressWarnings("rawtypes")
 	public static Flag flag;
 
-	public WorldGuardManager() {}
-	
 	public void setup() {
 		worldGuard = WorldGuard.getInstance();
 	}
