@@ -79,7 +79,7 @@ public class Chair {
 	}
 	
 	public boolean isOccupied() {
-		return !(fakeSeat == null) && !fakeSeat.isEmpty();
+		return fakeSeat != null && !fakeSeat.isEmpty();
 	}
 	
 	/*
